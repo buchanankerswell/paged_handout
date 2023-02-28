@@ -7,11 +7,11 @@ all: $(HANDOUTS)
 
 # Main level
 %.html: %.Rmd
-	@printf "\nRendering %s ..." "$<"
-	@R -q -e 'rmarkdown::render("$<", quiet = T)' > /dev/null 2>&1
 	@printf "\nUpdated date in %s to %s" "assets/css/$(*F).css" "$(shell date '+%Y-%m-%d')"
 	@sed -i '' -r "s/[12][0-9]{3}-[01][0-9]-[0-3][0-9]/$(shell date '+%Y-%m-%d')/g" \
 		assets/css/$(*F).css
+	@printf "\nRendering %s ..." "$<"
+	@R -q -e 'rmarkdown::render("$<", quiet = T)' > /dev/null 2>&1
 	@printf "\nRendering complete for %s" "$<"
 
 # purge auxillary files
