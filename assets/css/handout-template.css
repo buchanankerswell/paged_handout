@@ -1,0 +1,280 @@
+@page {
+  size: letter portrait;
+  @top-left {
+    content: none;
+  }
+  @top-right {
+    content: none;
+  }
+  @bottom-left {
+    content: counter(page);
+  }
+  @bottom-right {
+    content: "GLG 211 | Chemistry of Earth Systems | last updated: " var(--last-updated);
+  }
+}
+:root {
+  --page-width: 8.5in;
+  --pagedjs-margin-right: 1in;
+  --pagedjs-margin-left: 1in;
+  --pagedjs-margin-top: 1in;
+  --pagedjs-margin-bottom: 1in;
+  --root-font-size: 11pt;
+  --viewer-pages-spacing: 11px;
+  --viewer-shadow-color: #313131; /* this marks the pages */
+  --my-darkgray: #929598;
+  --indentation: 0%;
+  --last-updated: "2022-11-29"
+}
+@media screen {
+  body {
+    background-color: var(--viewer-background-color);
+    margin: 0; /* for mobile */
+    width: calc(var(--pagedjs-width) + 2 * var(--viewer-pages-spacing)); /* for mobile */
+  }
+   .pagedjs_pages {
+    max-width: var(--pagedjs-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+   .pagedjs_page {
+    box-shadow: 0 0 calc(0.66667 * var(--viewer-pages-spacing)) var(--viewer-shadow-color);
+    margin: var(--viewer-pages-spacing) 0;
+  }
+}
+ @media screen and (min-width: 8.5in) {
+  /* not a mobile */
+  body {
+    margin: auto;
+    width: unset;
+  }
+}
+body {
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+}
+a {
+  color: black;
+}
+p, li {
+  font-size: var(--root-font-size);
+  line-height: 150%;
+  margin-left: var(--indentation);
+}
+h2 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: var(--indentation);
+}
+h3 {
+  margin-left: var(--indentation);
+  margin-bottom: 0.5em;
+}
+strong {
+  font-weight: 500;
+  background: #EAEDED;
+}
+ul {
+  list-style-type: "→ ";
+  break-after: avoid;
+}
+.ai {
+  font-size: 1.5em;
+}
+.fa {
+  font-size: 1.8em;
+}
+.fab {
+  font-size: 1.55em;
+}
+.figure {
+  margin: 0em;
+}
+.csl-entry {
+  padding-left: 2em;
+  text-indent: -2em;
+}
+.caption {
+  text-align: justify;
+  font-size: 0.8em;
+  font-weight: 500;
+  line-height: 120%;
+  padding: 1em 1em;
+  margin: 0em;
+	border-style: solid none none none;
+	border-width: thin;
+}
+/****** Page margins ******/
+.pagedjs_margin-bottom-left {
+  text-align: left;
+  margin-left: var(--indentation);
+  color: var(--my-darkgray);
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+.pagedjs_margin-bottom-right {
+  text-align: right;
+  margin-right: var(--indentation);
+  color: var(--my-darkgray);
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+/***** STYLE HEADING    *******/
+.title-and-contact {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  border-style: none none solid none;
+	border-style: thin;
+  margin-bottom: 1.8em;
+  padding-bottom: 0.5em;
+}
+.info-box {
+  padding: 0.1em 0.1em;
+  line-height: 120%;
+}
+.info-box thead {
+  display: none;
+}
+.info-box td:first-child{
+  width: 5%;
+  text-align: center;
+}
+.info-box a {
+  text-decoration: none;
+  color: black;
+}
+.title h1 {
+  text-align: left;
+  font-size: 3em;
+  padding: 0;
+  margin: auto;
+}
+.title h2 {
+  text-align: left;
+  margin: auto;
+}
+.title h3 {
+  text-align: left;
+  font-size: 1em;
+  padding-top: 1em;
+  margin: auto;
+}
+/***** STYLE CV ENTRIES *******/
+.cv-entries table {
+  border-spacing: 0;
+  margin-left: var(--indentation);
+  width: 100%;
+  page-break-inside: auto;
+}
+.cv-entries thead {
+  display: none;
+}
+.cv-entries td {
+  vertical-align: top;
+  line-height: 120%;
+  padding-bottom: 1em;
+  font-size: var(--root-font-size);
+  text-align: justify;
+}
+.cv-entries tr {
+  page-break-inside: avoid;
+  display: block;
+}
+/* basic styling for first column in two-column cv entries */
+.cv-entries td:first-child {
+  width: 3em;
+  text-align: left;
+}
+.cv-entries-teaching table {
+  border-spacing: 0.5em;
+  page-break-inside: auto;
+  border: 1pt solid #EAEDED;
+}
+.cv-entries-teaching thead {
+  display: revert;
+	text-align: left;
+}
+.cv-entries-teaching thead th:nth-child(2) {
+	width: 14%;
+  display: revert;
+	text-align: left;
+}
+.cv-entries-teaching th {
+	border-bottom: 1pt solid black;
+}
+.cv-entries-teaching td {
+  padding-bottom: 0;
+	font-size: 0.8em;
+  text-align: left;
+  page-break-inside: avoid;
+}
+.cv-entries-teaching tr {
+  display: revert;
+  page-break-inside: avoid;
+}
+.cv-entries-teaching tbody tr:nth-child(odd) {
+	background-color: #F4F6F6;
+  display: revert;
+  page-break-inside: avoid;
+}
+table.cv-entries-teaching tr td,
+table.cv-entries-teaching tr th {
+  page-break-inside: avoid;
+}
+/* make titles bold */
+.cv-entry-title {
+  font-weight: 500;
+  padding: 0.1em 0.5em 0.1em 0.5em;
+}
+.cv-entry-title1 {
+  font-weight: 500;
+  background: #D5DBDB;
+  padding: 0.1em 0.5em 0.1em 0.5em;
+}
+.cv-entry-title2 {
+  background: #EAEDED;
+  padding: 0.1em 0.5em 0.1em 0.5em;
+}
+.cv-entry-title3 {
+  background: #F4F6F6;
+  padding: 0.1em 0.5em 0.1em 0.5em;
+}
+.cv-entries-pub-link1 {
+  background: #FADBD8;
+}
+.cv-entries-pub-link2 {
+  background: #E8DAEF;
+}
+.cv-entries-pub-link3 {
+  background: #D6EAF8;
+}
+.cv-entries-pub-link4 {
+  background: #D0ECE7;
+}
+.cv-entries-pub-link5 {
+  background: #FCF3CF;
+}
+.cv-entries-pub-link6 {
+  background: #FDEBD0;
+}
+.cv-entries-pub-link7 {
+  background: #F6DDCC;
+}
+.cv-entries-pub-link8 {
+  background: #E5E8E8;
+}
+.cv-entries-pub-link9 {
+  background: #D6DBDF;
+}
+.cv-entries a {
+  color: black;
+}
+.break-before {
+  break-before: page;
+}
+.break-after {
+  break-after: page;
+}
