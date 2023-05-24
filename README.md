@@ -11,12 +11,13 @@ This repository is self-contained but requires the following software (all open-
 
 ## Prerequisite software
 
-### R & Rmarkdown
+### R, Rmarkdown, & Pagedown
 
-Rmarkdown requires R. Follow the instructions at [R's homepage](https://www.r-project.org) to download and install the latest release of R on your machine. Then, install Rmarkdown with:
+This handout requires [Rmarkdown](https://rmarkdown.rstudio.com) and [Pagedown](https://github.com/rstudio/pagedown), which both require R. Follow the instructions at [R's homepage](https://www.r-project.org) to download and install the latest release of R on your machine. Then, install Rmarkdown and Pagedown with:
 
 ```
 R -e "install.packages('rmarkdown')"
+R -e "install.packages('pagedown')"
 ```
 
 ### Pandoc
