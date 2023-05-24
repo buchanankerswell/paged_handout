@@ -1,6 +1,6 @@
-# Pagedj handout
+# Paged.js handout
 
-This repository demonstrates how to create a handout with `[Rmarkdown](https://rmarkdown.rstudio.com)` and `[paged.js](https://pagedjs.org)`. Some examples are given [here](examples/).
+This repository demonstrates how to create a handout with [Rmarkdown](https://rmarkdown.rstudio.com) and [paged.js](https://pagedjs.org). Some examples are given [here](examples/).
 
 This repository includes:
 
